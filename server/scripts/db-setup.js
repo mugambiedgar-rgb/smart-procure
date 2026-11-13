@@ -13,6 +13,7 @@ const env = require('../config/env');
   const reset = process.argv.includes('--reset');
   const conn = await mysql.createConnection({
     host: env.db.host, port: env.db.port, user: env.db.user, password: env.db.password,
+    ssl: env.db.ssl,
     multipleStatements: true,
   });
   try {
